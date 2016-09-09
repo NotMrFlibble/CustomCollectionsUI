@@ -49,6 +49,7 @@ function populateList(collectionName)
 -- BEGIN CUSTOM CODE
   if self.collectionName == "customCollections" then
     local collections = config.getParameter("customCollections")
+    table.sort(collections)
 
     widget.setText("selectLabel", config.getParameter("customCollectionsTitle"))
     widget.setVisible("emptyLabel", false)

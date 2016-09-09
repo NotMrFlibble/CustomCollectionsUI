@@ -38,27 +38,27 @@
               4
             ],
             "memberSize": [
-              200,
+              204,
               9
             ],
             "listTemplate": {
               "background": {
                 "type": "image",
-                "file": "/interface/ai/listitemscroll.png",
+                "file": "/interface/scripted/collections/tab_customcollections_bg.png",
                 "position": [
                   0,
-                  -2
+                  0
                 ],
                 "zlevel": -1
               },
               "collectionName": {
                 "type": "label",
                 "position": [
-                  2,
-                  1
+                  3,
+                  0
                 ],
-                "hAnchor": "left",
-                "width": 192,
+                "hAnchor": "mid",
+                "width": 198,
                 "value": "Replace Me"
               }
             }
@@ -106,8 +106,8 @@
         4,
         34
       ],
-      "baseImage": "/interface/scripted/collections/tab_bug_deselect.png",
-      "baseImageChecked": "/interface/scripted/collections/tab_bug_select.png",
+      "baseImage": "/interface/scripted/collections/tab_customcollections_deselect.png",
+      "baseImageChecked": "/interface/scripted/collections/tab_customcollections_select.png",
       "pressedOffset": [
         0,
         0
