@@ -21,9 +21,10 @@ function update(dt)
     selected = widget.getData(string.format("%s.%s", self.customList, selected))
     if selected ~= self.collectionName then
       populateList(selected)
-      self.collectionName = "customCollections" -- hack
-      return
+      self.customCollectionName = selected
+      widget.setSelectedOption("collectionTabs", 6)
     end
+    return
   end
 -- END CUSTOM CODE
   if self.collectionName and self.collectionName ~= selected then
@@ -33,7 +34,7 @@ function update(dt)
     else
       for _,collectable in pairs(player.collectables(self.collectionName)) do
         if not self.playerCollectables[collectable] then
-          populateList()
+          populateList(self.customCollectionName) --
           break
         end
       end
@@ -42,12 +43,16 @@ function update(dt)
 end
 
 function populateList(collectionName)
-  widget.clearListItems(self.list)
-  widget.clearListItems(self.customList)
-  self.collectionName = collectionName or widget.getSelectedData("collectionTabs") -- HACK: collectionName
-
 -- BEGIN CUSTOM CODE
-  if self.collectionName == "customCollections" then
+  local collectionName = collectionName or widget.getSelectedData("collectionTabs")
+  if collectionName == "customCollectionsVisible" then return end -- special case: do nothing
+
+  widget.clearListItems(self.customList)
+-- END CUSTOM CODE
+  widget.clearListItems(self.list)
+  self.collectionName = collectionName
+--BEGIN CUSTOM CODE
+  if collectionName == "customCollections" then
     local collections = config.getParameter("customCollections")
     table.sort(collections)
 
@@ -63,9 +68,10 @@ function populateList(collectionName)
       widget.setData(path, collection)
       widget.setText(path .. ".collectionName", collectionInfo.title)
     end
--- END CUSTOM CODE
-  elseif self.collectionName then
-    local collection = root.collection(self.collectionName)
+-- END CUSTOM CODE -- below, self.collectionName → collectionName
+  elseif collectionName then
+    self.customCollectionName = collectionName -- CUSTOM - needed to avoid reset to custom collection view
+    local collection = root.collection(collectionName)
     widget.setText("selectLabel", collection.title);
     widget.setVisible("emptyLabel", false)
     widget.setVisible("scrollArea", true)
@@ -74,11 +80,11 @@ function populateList(collectionName)
     self.currentCollectables = {}
 
     self.playerCollectables = {}
-    for _,collectable in pairs(player.collectables(self.collectionName)) do
+    for _,collectable in pairs(player.collectables(collectionName)) do
       self.playerCollectables[collectable] = true
     end
 
-    local collectables = root.collectables(self.collectionName)
+    local collectables = root.collectables(collectionName)
     table.sort(collectables, function(a, b) return a.order < b.order end)
     for _,collectable in pairs(collectables) do
       local item = widget.addListItem(self.list)
@@ -115,11 +121,11 @@ function createTooltip(screenPosition)
 end
 
 function selectCollection(index, data)
-sb.logInfo("selection made")
   populateList()
 end
 
 function selectCustomCollection(index, data)
+  sb.logInfo("custom collection list click detection: actually working! FIXME")
 --[[
   local listItem = widget.getListSelected(self.customList)
   if listItem then

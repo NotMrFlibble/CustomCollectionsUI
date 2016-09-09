@@ -83,5 +83,14 @@
       "pressedOffset": [ 0, 0 ],
       "data": "customCollections"
     }
+  },
+  {
+    "op": "add",
+    "path": "/gui/collectionTabs/buttons/-",
+    "value": {
+      "visible": false,
+      "selected": false,
+      "data": "customCollectionsVisible"
+    }
   }
 ]
