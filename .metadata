@@ -1,0 +1,9 @@
+{
+  "author" : "NotMrFlibble",
+  "description" : "Modifies Starbound's collections window to display custom collections.",
+  "friendlyName" : "Custom Collections UI",
+  "includes" : [],
+  "name" : "CustomCollectionsUI",
+  "requires" : [],
+  "version" : "0.1"
+}
