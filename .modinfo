@@ -1,0 +1,10 @@
+{
+  "name" : "Custom Collections UI",
+  "path" : ".",
+  "dependencies" : [],
+  "metadata" : {
+    "author" : "Not Mr Flibble",
+    "version" : "0.1",
+    "description" : "Modifies Starbound's collections window to display custom collections."
+  }
+}
