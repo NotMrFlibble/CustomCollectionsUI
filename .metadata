@@ -5,5 +5,7 @@
   "includes" : [],
   "name" : "CustomCollectionsUI",
   "requires" : [],
+  "link" : "steam://url/CommunityFilePage/760881689",
+  "steamContentId" : "760881689",
   "version" : "0.1"
 }
