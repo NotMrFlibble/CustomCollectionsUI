@@ -44,10 +44,10 @@ end
 
 function populateList(collectionName)
 -- BEGIN CUSTOM CODE
+  widget.clearListItems(self.customList)
+
   local collectionName = collectionName or widget.getSelectedData("collectionTabs")
   if collectionName == "customCollectionsVisible" then return end -- special case: do nothing
-
-  widget.clearListItems(self.customList)
 -- END CUSTOM CODE
   widget.clearListItems(self.list)
   self.collectionName = collectionName
