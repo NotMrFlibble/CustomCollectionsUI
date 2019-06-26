@@ -22,7 +22,7 @@ function update(dt)
     if selected ~= self.collectionName then
       populateList(selected)
       self.customCollectionName = selected
-      widget.setSelectedOption("collectionTabs", 6)
+      widget.setSelectedOption("collectionTabs", 7) -- Number here must be equal to the number of vanilla collections
     end
     return
   end

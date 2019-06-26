@@ -45,39 +45,44 @@
   {
     "op": "replace",
     "path": "/gui/collectionTabs/buttons/0/position/1",
-    "value": 190
+    "value": 196
   },
   {
     "op": "replace",
     "path": "/gui/collectionTabs/buttons/1/position/1",
-    "value": 164
+    "value": 172
   },
   {
     "op": "replace",
     "path": "/gui/collectionTabs/buttons/2/position/1",
-    "value": 138
+    "value": 148
   },
   {
     "op": "replace",
     "path": "/gui/collectionTabs/buttons/3/position/1",
-    "value": 112
+    "value": 124
   },
   {
     "op": "replace",
     "path": "/gui/collectionTabs/buttons/4/position/1",
-    "value": 86
+    "value": 100
   },
   {
     "op": "replace",
     "path": "/gui/collectionTabs/buttons/5/position/1",
-    "value": 60
+    "value": 76
+  },
+  {
+    "op": "replace",
+    "path": "/gui/collectionTabs/buttons/6/position/1",
+    "value": 52
   },
   {
     "op": "add",
     "path": "/gui/collectionTabs/buttons/-",
     "value": {
       "selected": false,
-      "position": [ 4, 34 ],
+      "position": [ 4, 28 ],
       "baseImage": "/interface/scripted/collections/tab_customcollections_deselect.png",
       "baseImageChecked": "/interface/scripted/collections/tab_customcollections_select.png",
       "pressedOffset": [ 0, 0 ],
