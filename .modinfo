@@ -4,7 +4,7 @@
   "dependencies" : [],
   "metadata" : {
     "author" : "Not Mr Flibble",
-    "version" : "0.1",
+    "version" : "0.1.2",
     "description" : "Modifies Starbound's collections window to display custom collections."
   }
 }
